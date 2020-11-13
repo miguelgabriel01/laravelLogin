@@ -25,4 +25,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/admin',[AuthController::class,'dashboard'])->name('admin');
 Route::get('/admin/login',[AuthController::class,'showFormLogin'])->name('admin.login');
+Route::get('/admin/logout',[AuthController::class,'logout'])->name('admin.logout');
+
 Route::post('/admin/login/do',[AuthController::class,'login'])->name('admin.login.do');
