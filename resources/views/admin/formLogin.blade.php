@@ -11,14 +11,15 @@
 <body>
     
 
-    <form method="POST" action="">
+<form method="post" action="{{ route('admin.login.do') }}">
+    @csrf
         <div class="form-group">
           <label for="exampleInputEmail1">Endereço de Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="email" class="form-control" name="email" id="email" value="gabrielogabriel10@gmail.com" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Senha</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <input type="password" class="form-control" id="password" name="password">
         </div>
       
         <button type="submit" class="btn btn-primary">Entrar</button>

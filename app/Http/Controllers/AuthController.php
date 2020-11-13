@@ -11,6 +11,7 @@ class AuthController extends Controller
 
         //Verifica se existe uma sessão e redireciona o usuario para a view de dashboard
         if(Auth::check() === true ){
+            dd(Auth::user());
             return view('admin.dashboard');
         }
 
@@ -20,5 +21,16 @@ class AuthController extends Controller
 
     public function showFormLogin(){
         return view('admin.formLogin');
+    }
+
+    public function login(Request $request){
+        var_dump($request->all());
+
+        $credentials = [
+            'email' => $request->email,
+            'password' => $request->password
+        ];
+
+        Auth::attempt($credentials);
     }
 }
