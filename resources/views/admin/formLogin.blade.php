@@ -13,6 +13,14 @@
 
 <form method="post" action="{{ route('admin.login.do') }}">
     @csrf
+
+    @if($errors->all())
+       @foreach ($errors->all() as $error)
+       <div class="alert alert-danger" role="alert">
+       {{$error}}
+      </div>
+       @endforeach
+    @endif
         <div class="form-group">
           <label for="exampleInputEmail1">Endereço de Email</label>
           <input type="email" class="form-control" name="email" id="email" value="gabrielogabriel10@gmail.com" aria-describedby="emailHelp">
