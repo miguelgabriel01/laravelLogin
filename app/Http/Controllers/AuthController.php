@@ -11,7 +11,7 @@ class AuthController extends Controller
 
         //Verifica se existe uma sessão e redireciona o usuario para a view de dashboard
         if(Auth::check() === true ){
-            dd(Auth::user());
+            //dd(Auth::user());
             return view('admin.dashboard');
         }
 
@@ -32,5 +32,10 @@ class AuthController extends Controller
         ];
 
         Auth::attempt($credentials);
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('admin');
     }
 }

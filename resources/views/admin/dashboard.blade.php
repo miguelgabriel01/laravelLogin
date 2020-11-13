@@ -8,7 +8,9 @@
 </head>
 <body>
 
-   <h1>Painel de Administração</h1>
+   <h1>Painel de Administração</h1><br><br>
+
+   <a href="{{ route('admin.logout')}}">Logout(Sair)</a>
 
 </body>
 </html>
